@@ -1,5 +1,6 @@
 <%-- any content can be specified here e.g.: --%>
 <%@ page pageEncoding="UTF-8" %>
+<p>Rodrigo Carvalho Francisco</p>
 <% if(request.getParameter("session.user") != null) {
         session.setAttribute("session.user", request.getParameter("session.user"));
         response.sendRedirect(request.getRequestURI());
@@ -9,9 +10,9 @@
         response.sendRedirect(request.getRequestURI());
     }
 %>
-<% if(session.getAttribute("session.user") !null) { %>
+<% if(session.getAttribute("session.user") !=null) { %>
 <form>
-    <p>Usuario: <% session.getAttribute("session.user") %></p>
+    <p>Usuario: <%= session.getAttribute("session.user") %></p>
     <a href="index.jsp">Início</a> 
     <a href="disciplinas.jsp">Disciplinas</a> <br/><br/>
     <input type="submit" name="sessior.sair" value="Sair" />
